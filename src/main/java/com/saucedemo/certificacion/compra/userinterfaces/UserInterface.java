@@ -1,0 +1,11 @@
+package com.saucedemo.certificacion.compra.userinterfaces;
+
+import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.screenplay.targets.Target;
+
+
+public class UserInterface extends PageObject {
+        public static final Target INPUT_USER = Target.the("INPUT USER").locatedBy("//*[@id='user-name']");
+        public static final Target INPUT_PASSWORD = Target.the("INPUT PASSWORD").locatedBy("//*[@id='password']");
+    public static final Target CLICK_LOGIN = Target.the("CLICK LOGIN").locatedBy("//*[@id='login-button']");
+}

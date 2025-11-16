@@ -1,0 +1,45 @@
+package com.saucedemo.certificacion.compra.stepdefinitions;
+
+import com.saucedemo.certificacion.compra.tasks.LoginInTheOfficialSite;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.openqa.selenium.WebDriver;
+
+
+public class StepDefinition {
+    @Managed(driver = "chrome", uniqueSession = true)
+    WebDriver theDriver;
+
+    @Before
+    public void config() {
+        OnStage.setTheStage(new OnlineCast());
+        OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
+    }
+
+    @Given("the user opens the SauceDemo login page")
+    public void theUserOpensTheSauceDemoLoginPage() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Open.url("https://www.saucedemo.com")
+        );
+    }
+
+    @When("the user logs in with username {string} and password {string}")
+    public void theUserLogsInWithUsernameAndPassword(String username, String password) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                LoginInTheOfficialSite.theUser()
+        );
+    }
+
+    @Then("the user should see the products inventory")
+    public void theUserShouldSeeTheProductsInventory() {
+        // TODO: Add question/task
+        throw new io.cucumber.java.PendingException();
+    }
+}
