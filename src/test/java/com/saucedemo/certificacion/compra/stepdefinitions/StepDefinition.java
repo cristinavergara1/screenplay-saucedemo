@@ -44,4 +44,10 @@ public class StepDefinition {
         OnStage.theActorInTheSpotlight()
                 .should(seeThat(LoginValidation.isSuccessful(), equalTo(true)));
     }
+
+
+    //Para ShoppingCart
+
+
+
 }
