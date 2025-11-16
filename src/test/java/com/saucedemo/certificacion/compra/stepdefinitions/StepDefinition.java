@@ -19,11 +19,13 @@ public class StepDefinition {
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver theDriver;
 
+
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
     }
+
 
     @Given("the user opens the SauceDemo login page")
     public void theUserOpensTheSauceDemoLoginPage() {
@@ -50,4 +52,7 @@ public class StepDefinition {
 
 
 
-}
+    }
+
+
+
