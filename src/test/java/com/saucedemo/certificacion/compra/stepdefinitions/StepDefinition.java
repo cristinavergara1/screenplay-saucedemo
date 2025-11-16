@@ -1,5 +1,5 @@
 package com.saucedemo.certificacion.compra.stepdefinitions;
-
+import com.saucedemo.certificacion.compra.questions.LoginValidation;
 import com.saucedemo.certificacion.compra.tasks.LoginInTheOfficialSite;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -11,6 +11,8 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.equalTo;
 
 
 public class StepDefinition {
@@ -39,7 +41,7 @@ public class StepDefinition {
 
     @Then("the user should see the products inventory")
     public void theUserShouldSeeTheProductsInventory() {
-        // TODO: Add question/task
-        throw new io.cucumber.java.PendingException();
+        OnStage.theActorInTheSpotlight()
+                .should(seeThat(LoginValidation.isSuccessful(), equalTo(true)));
     }
 }
