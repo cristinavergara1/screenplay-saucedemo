@@ -12,3 +12,4 @@ Feature: Add product to shopping cart
     Then the user see 1 product in the shopping cart
 
 
+

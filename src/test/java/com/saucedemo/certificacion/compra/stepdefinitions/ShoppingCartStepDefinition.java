@@ -1,6 +1,7 @@
 package com.saucedemo.certificacion.compra.stepdefinitions;
 
 
+import com.saucedemo.certificacion.compra.tasks.ClickOn;
 import com.saucedemo.certificacion.compra.tasks.LoginInTheOfficialSite;
 import com.saucedemo.certificacion.compra.tasks.OpenThe;
 import com.saucedemo.certificacion.compra.userinterfaces.ProductPage;
@@ -45,8 +46,7 @@ public class ShoppingCartStepDefinition {
         }
     @When("the user {string} to the shopping cart")
     public void theUserToTheShoppingCart(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+         OnStage.theActorCalled("user").attemptsTo(ClickOn.ShoppingButton());
     }
     @Then("the user see {int} product in the shopping cart")
     public void theUserSeeProductInTheShoppingCart(Integer int1) {

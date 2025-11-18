@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Add product to shopping cart" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-11-16T20:48:03" hostname="DESKTOP-HE8JUG3" time="17.953">
+<testsuite name="Add product to shopping cart" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-11-18T02:08:09" hostname="DESKTOP-HE8JUG3" time="24.343">
   <properties/>
-  <testcase name="Add a product to the shopping cart successfully" classname="Add product to shopping cart" time="17.953">
+  <testcase name="Add a product to the shopping cart successfully" classname="Add product to shopping cart" time="24.343">
     <failure message="io.cucumber.java.PendingException: TODO: implement me" type="io.cucumber.java.PendingException">io.cucumber.java.PendingException: TODO: implement me
-	at app//com.saucedemo.certificacion.compra.stepdefinitions.ShoppingCartStepDefinition.theUserToTheShoppingCart(ShoppingCartStepDefinition.java:49)
-	at ✽.the user &quot;Sauce Labs Backpack&quot; to the shopping cart(file:///C:/Users/Usuario/Desktop/TallerScreenplay/src/test/resources/features/add_product_to_shopping_cart.feature:11)
+	at app//com.saucedemo.certificacion.compra.stepdefinitions.ShoppingCartStepDefinition.theUserSeeProductInTheShoppingCart(ShoppingCartStepDefinition.java:54)
+	at ✽.the user see 1 product in the shopping cart(file:///C:/Users/Usuario/Desktop/TallerScreenplay/src/test/resources/features/add_product_to_shopping_cart.feature:12)
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
@@ -18,9 +18,9 @@ Add a product to the shopping cart successfully(add-product-to-shopping-cart;add
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --start-maximized], extensions: []}}
-nov. 16, 2025 3:48:13 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 17, 2025 9:08:19 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov. 16, 2025 3:48:14 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov. 17, 2025 9:08:19 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.163. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   ___   _  _   ___    ___   _  _    ___ 
