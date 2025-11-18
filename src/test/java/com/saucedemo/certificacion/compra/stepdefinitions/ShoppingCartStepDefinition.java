@@ -1,6 +1,7 @@
 package com.saucedemo.certificacion.compra.stepdefinitions;
 
 
+import com.saucedemo.certificacion.compra.questions.ShoppingCartValidation;
 import com.saucedemo.certificacion.compra.tasks.ClickOn;
 import com.saucedemo.certificacion.compra.tasks.LoginInTheOfficialSite;
 import com.saucedemo.certificacion.compra.tasks.OpenThe;
@@ -15,6 +16,9 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
+import static org.hamcrest.Matchers.equalTo;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class ShoppingCartStepDefinition {
 
@@ -50,8 +54,7 @@ public class ShoppingCartStepDefinition {
     }
     @Then("the user see {int} product in the shopping cart")
     public void theUserSeeProductInTheShoppingCart(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        OnStage.theActorInTheSpotlight().should(seeThat(ShoppingCartValidation.product(),equalTo(1)));
     }
 
 }
