@@ -1,5 +1,5 @@
 # language: en
-Feature: Find out SauceDemo official site
+Feature: Enter to the SauceDemo official site
   As a user
   I want to enter the SauceDemo official site
   To be able to use the platform

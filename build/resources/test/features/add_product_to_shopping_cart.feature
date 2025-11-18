@@ -7,9 +7,9 @@ Feature: Add product to shopping cart
     Given the user logs in using valid credentials
 
   Scenario: Add a product to the shopping cart successfully
-    Given the user are on the product page
-    When the user "Sauce Labs Backpack" to the shopping cart
-    Then the user see 1 product in the shopping cart
+    Given the user is on the product page
+    When the user adds "Sauce Labs Backpack" to the shopping cart
+    Then the shopping cart should display 1 item
 
 
 
