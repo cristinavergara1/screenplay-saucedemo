@@ -10,9 +10,20 @@ public class DeleteProductValidation implements Question<Integer> {
 
     @Override
     public Integer answeredBy(Actor actor) {
-        String quantityText = Text.of(CART_BADGE).answeredBy(actor).trim();
-        return Integer.parseInt(quantityText);
+        if (!CART_BADGE.resolveAllFor(actor).isEmpty()) {
+
+            String text = CART_BADGE.resolveFor(actor).getText().trim();
+
+            if (text.isEmpty()) {
+                return 0;
+            }
+            return Integer.parseInt(text);
+        }
+
+        // Badge NO existe → carrito vacío
+        return 0;
     }
+
 
     public static DeleteProductValidation product() {
         return new DeleteProductValidation();

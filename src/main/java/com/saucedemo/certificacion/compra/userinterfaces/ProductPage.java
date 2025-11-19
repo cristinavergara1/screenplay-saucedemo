@@ -9,6 +9,5 @@ public class ProductPage extends PageObject {
             .locatedBy("//button[@id='add-to-cart']");
     public static final Target CART_BADGE = Target.the("shopping cart badge")
             .locatedBy("//span[@class='shopping_cart_badge']");
-    public static final Target DELETE_FROM_CART_BUTTON = Target.the("remove Sauce Labs Bike Light button")
-            .located(By.id("remove-sauce-labs-bike-light"));
-}
+    public static final Target DELETE_FROM_CART_BUTTON = Target.the("Remove Sauce Labs Backpack button")
+            .located(By.id("remove-sauce-labs-backpack"));}

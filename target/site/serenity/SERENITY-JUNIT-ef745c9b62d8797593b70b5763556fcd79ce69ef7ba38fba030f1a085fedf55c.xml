@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Delete product of the shopping cart" skipped="0" tests="1" time="12.7" timestamp="2025-11-18 05:30:11"><testcase name="Delete a product of the shopping cart successfully"><failure message="Expected condition failed: waiting for By.id: remove-sauce-labs-bike-light to be present (tried for 5 second(s) with 100 milliseconds interval)&#10;Build info: version: '4.16.1', revision: '9b4c83354e'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'&#10;Driver info: driver.version: unknown" type="net.thucydides.core.webdriver.exceptions.ElementShouldBePresentException">Expected condition failed: waiting for By.id: remove-sauce-labs-bike-light to be present (tried for 5 second(s) with 100 milliseconds interval)
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
-Driver info: driver.version: unknown</failure><system-err>Expected condition failed: waiting for By.id: remove-sauce-labs-bike-light to be present (tried for 5 second(s) with 100 milliseconds interval)
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
-Driver info: driver.version: unknown&#13;
-com.saucedemo.certificacion.compra.interactions.ClickDelete.performAs(ClickDelete.java:13)&#13;
-com.saucedemo.certificacion.compra.tasks.Remove.performAs(Remove.java:11)&#13;
-com.saucedemo.certificacion.compra.stepdefinitions.DeleteProductStepDefinition.theUserDeletesFromTheShoppingCart(DeleteProductStepDefinition.java:48)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Delete product of the shopping cart" skipped="0" tests="1" time="8.24" timestamp="2025-11-18 07:08:37"><testcase name="Delete a product of the shopping cart successfully"/></testsuite>

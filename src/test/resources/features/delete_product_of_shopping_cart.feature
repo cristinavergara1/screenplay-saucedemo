@@ -1,7 +1,7 @@
 Feature: Delete product of the shopping cart
   I as user
   I want to delete a product from my shopping cart
-  To remove unwanted items
+  To remove unwanted item
 
   Background:
     Given the user logs in using valid credentials
