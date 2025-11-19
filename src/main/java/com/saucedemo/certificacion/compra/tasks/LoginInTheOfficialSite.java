@@ -10,13 +10,13 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
 public class LoginInTheOfficialSite implements Task {
-       @Override
-        public <T extends Actor> void performAs(T actor) {
-            actor.attemptsTo( LoginSuccessfull.clickIt());
-        }
-
-        public static LoginInTheOfficialSite theUser() {
-            return Tasks.instrumented(LoginInTheOfficialSite.class);
-        }
-
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo( LoginSuccessfull.clickIt());
     }
+
+    public static LoginInTheOfficialSite theUser() {
+        return Tasks.instrumented(LoginInTheOfficialSite.class);
+    }
+
+}

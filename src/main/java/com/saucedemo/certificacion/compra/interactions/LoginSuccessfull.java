@@ -9,6 +9,7 @@ import static com.saucedemo.certificacion.compra.userinterfaces.UserInterface.*;
 
 public class LoginSuccessfull implements Interaction {
 
+
     public <T extends Actor> void performAs(T actor ) {
         actor.attemptsTo(Enter.theValue("standard_user").into(INPUT_USER));
         actor.attemptsTo(Enter.theValue("secret_sauce").into(INPUT_PASSWORD));

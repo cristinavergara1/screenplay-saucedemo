@@ -1,5 +1,7 @@
 package com.saucedemo.certificacion.compra.stepdefinitions;
+import com.saucedemo.certificacion.compra.questions.LoginErrorMessage;
 import com.saucedemo.certificacion.compra.questions.LoginValidation;
+import com.saucedemo.certificacion.compra.tasks.InvalidLogin;
 import com.saucedemo.certificacion.compra.tasks.LoginInTheOfficialSite;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -12,6 +14,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 
@@ -41,14 +44,29 @@ public class StepDefinition {
         );
     }
 
+    @When("the user logs in with invalid username {string} and password {string}")
+    public void theUserLogsInWithInvalidUsernameAndPassword(String username, String password) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                InvalidLogin.withCredentials(username, password)
+        );
+    }
+
+    // Validación exitosa
     @Then("the user should see the products inventory")
     public void theUserShouldSeeTheProductsInventory() {
         OnStage.theActorInTheSpotlight()
                 .should(seeThat(LoginValidation.isSuccessful(), equalTo(true)));
     }
 
-
+    // Validación de error
+    @Then("the user should see an error message indicating invalid credentials")
+    public void theUserShouldSeeAnErrorMessageIndicatingInvalidCredentials() {
+        OnStage.theActorInTheSpotlight().should(
+                seeThat(LoginErrorMessage.displayed(), containsString("Epic sadface"))
+        );
     }
+    }
+
 
 
 
