@@ -1,7 +1,6 @@
 package com.saucedemo.certificacion.compra.stepdefinitions;
 
 import com.saucedemo.certificacion.compra.questions.DeleteProductValidation;
-import com.saucedemo.certificacion.compra.tasks.ClickOn;
 import com.saucedemo.certificacion.compra.tasks.OpenThe;
 import com.saucedemo.certificacion.compra.tasks.Remove;
 import io.cucumber.java.Before;
@@ -25,18 +24,11 @@ public class DeleteProductStepDefinition {
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());
-        OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
+        //OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
     }
 
 
-    @Given("the user has a product added to the shopping cart")
-    public void theUserHasAProductAddedToTheShoppingCart() {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                OpenThe.url("https://www.saucedemo.com/inventory-item.html?id=4"),
-                ClickOn.ShoppingButton());
-    }
-
-    @Given("the user is on shopping cart page")
+        @Given("the user is on shopping cart page")
     public void theUserIsOnShoppingCartPage() {
         OnStage.theActorCalled("user").attemptsTo(
                 OpenThe.url("https://www.saucedemo.com/cart.html")
