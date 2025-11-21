@@ -5,6 +5,7 @@ import com.saucedemo.certificacion.compra.tasks.ClickCheckOut;
 import com.saucedemo.certificacion.compra.tasks.ContinueProcess;
 import com.saucedemo.certificacion.compra.tasks.FinishThe;
 import com.saucedemo.certificacion.compra.tasks.TypeValidInformation;
+import com.saucedemo.certificacion.compra.utils.WaitTime;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -31,15 +32,18 @@ public class CheckOutStepDefinition {
 
     @When("the user proceeds to checkout")
     public void theUserProceedsToCheckout() {
+        WaitTime.putWaitTimeOf(4000);
        OnStage.theActorInTheSpotlight().attemptsTo(ClickCheckOut.process());
 
     }
     @And("the checkout information given is valid")
     public void theCheckoutInformationGivenIsValid() {
+        WaitTime.putWaitTimeOf(3000);
         OnStage.theActorCalled("user").attemptsTo(TypeValidInformation.details());
     }
     @And("the user continues with the purchase revision")
     public void theUserContinuesWithThePurchaseRevision() {
+        WaitTime.putWaitTimeOf(3000);
         OnStage.theActorCalled("user").attemptsTo(ContinueProcess.ofCheckout());
     }
     @Then("the order should be confirmed")

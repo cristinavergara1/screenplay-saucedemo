@@ -37,8 +37,8 @@ public class StepDefinition {
         );
     }
 
-    @When("the user logs in with username {string} and password {string}")
-    public void theUserLogsInWithUsernameAndPassword(String username, String password) {
+    @When("the user logs in with valid credentials")
+    public void theUserLogsInWithUsernameAndPassword() {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 LoginInTheOfficialSite.theUser()
         );

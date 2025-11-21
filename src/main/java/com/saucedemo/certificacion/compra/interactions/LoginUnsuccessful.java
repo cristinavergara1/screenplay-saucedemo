@@ -1,5 +1,6 @@
 package com.saucedemo.certificacion.compra.interactions;
 
+import com.saucedemo.certificacion.compra.utils.WaitTime;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
@@ -24,6 +25,7 @@ public class LoginUnsuccessful implements Interaction {
                 Enter.theValue(password).into(INPUT_PASSWORD),
                 Click.on(CLICK_LOGIN)
         );
+        WaitTime.putWaitTimeOf(3000);
     }
 
     public static LoginUnsuccessful ClickIt(String username, String password) {

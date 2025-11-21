@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 public class CommonProductSteps {
+    
     @Given("the user has a product added to the shopping cart")
     public void theUserHasAProductAddedToTheShoppingCart() {
         OnStage.theActorInTheSpotlight().attemptsTo(

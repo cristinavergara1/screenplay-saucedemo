@@ -3,12 +3,13 @@ package com.saucedemo.certificacion.compra.stepdefinitions;
 import com.saucedemo.certificacion.compra.questions.DeleteProductValidation;
 import com.saucedemo.certificacion.compra.tasks.OpenThe;
 import com.saucedemo.certificacion.compra.tasks.Remove;
+import com.saucedemo.certificacion.compra.utils.WaitTime;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Managed;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +38,7 @@ public class DeleteProductStepDefinition {
 
     @When("the user deletes {string} from the shopping cart")
     public void theUserDeletesFromTheShoppingCart(String string) {
+        WaitTime.putWaitTimeOf(3000);
         OnStage.theActorCalled("user").attemptsTo(Remove.FromShoppingCart());
     }
 
