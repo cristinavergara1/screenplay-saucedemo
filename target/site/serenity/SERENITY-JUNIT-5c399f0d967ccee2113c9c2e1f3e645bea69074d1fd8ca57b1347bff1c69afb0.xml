@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="3" failures="0" name="Enter to the SauceDemo official site" skipped="0" tests="3" time="1.87" timestamp="2025-11-20 09:02:04"><testcase name="Successful login with valid credentials"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+com.saucedemo.certificacion.compra.stepdefinitions.StepDefinition.theUserOpensTheSauceDemoLoginPage(StepDefinition.java:35)&#13;
+✽.the user opens the SauceDemo login page(file:///C:/Users/Usuario/Desktop/TallerScreenplay/src/test/resources/features/login_saucedemo_official_site.feature:8)&#13;
+</system-err></testcase><testcase name="Unsuccessful login with invalid credentials"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)&#13;
+com.saucedemo.certificacion.compra.stepdefinitions.StepDefinition.theUserOpensTheSauceDemoLoginPage(StepDefinition.java:35)&#13;
+✽.the user opens the SauceDemo login page(file:///C:/Users/Usuario/Desktop/TallerScreenplay/src/test/resources/features/login_saucedemo_official_site.feature:13)&#13;
+</system-err></testcase></testsuite>

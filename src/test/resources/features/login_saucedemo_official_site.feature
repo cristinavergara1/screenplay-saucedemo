@@ -17,3 +17,5 @@ Feature: Enter to the SauceDemo official site
       | username        | password      |
       | locked_out_user | secret_sauce  |
       | cristina_user   | secret_sauce  |
+      | standard_user   | 12345         |
+

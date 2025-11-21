@@ -10,4 +10,4 @@ import org.junit.runner.RunWith;
         glue = "com.saucedemo.certificacion.compra.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class Runner {}
+public class LoginRunner {}
