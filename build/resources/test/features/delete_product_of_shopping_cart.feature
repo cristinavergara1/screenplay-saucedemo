@@ -1,4 +1,4 @@
-Feature: Delete product of the shopping cart
+Feature: Delete product from the shopping cart
   I as user
   I want to delete a product from my shopping cart
   To remove unwanted item

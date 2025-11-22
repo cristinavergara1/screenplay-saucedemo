@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/2.3.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/2.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/2.3.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+
+    <!-- Swiper.js local styles and script -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startIndex = parseInt(urlParams.get("screenshot")) || 0;
+
+            new Swiper('.swiper', {
+                initialSlide: startIndex,
+                effect: 'fade',
+                speed: 200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: lightgrey;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="ddf9e0ebaf7193c3cbc5075dec3fdcbceb9eb02c2215bc966f8c9eb932af7a0f.html">Checkout</a></span>
+                > <span class="truncate-60"><a
+                    href="cc842d9528cf9b1d1238bd95a9c88c716d21131ed0798cdb6643f17b2c948a12.html">Successful checkout process </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 21-11-2025 19:12</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Checkout Process </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a user<br />
+I want to complete the checkout process<br />
+To finalize my purchase
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="c68fd6639ab29c4b0ac02a78bc39f4e22557bcaa40ef14c903ac0e584626edfe.html">1 To 2 Minutes
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Successful checkout process
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user logs in using valid credentials" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User open the" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user opens the browser at https://www.saucedemo.com/" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User open the (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User login in the official site" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User login successfull" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user enters 'standard_user' into INPUT USER" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="521ced2ea8f43f0717498f4454f94bce483d4674737de3d71681bc40704547f3.png" title=" user enters 'standard_user' into INPUT USER (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="521ced2ea8f43f0717498f4454f94bce483d4674737de3d71681bc40704547f3.png" title=" user enters 'secret_sauce' into INPUT PASSWORD" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e70bb33ae2c109c2f87bdc3f458f41354bccc406a66e2bc11716622b99fc467b.png" title=" user enters 'secret_sauce' into INPUT PASSWORD (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="35afe8cbc5abd1240b50518903b0c3eae20e000fe1fbfc167023f13fe23fa80f.png" title=" user clicks on CLICK LOGIN" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cde7bf9ae0ab68c419a0c5ba90772c6f863007d6d98c2fc74f293f4ef4f75192.png" title=" user clicks on CLICK LOGIN (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cde7bf9ae0ab68c419a0c5ba90772c6f863007d6d98c2fc74f293f4ef4f75192.png" title=" User login successfull (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cde7bf9ae0ab68c419a0c5ba90772c6f863007d6d98c2fc74f293f4ef4f75192.png" title=" User login in the official site (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cde7bf9ae0ab68c419a0c5ba90772c6f863007d6d98c2fc74f293f4ef4f75192.png" title=" Given the user logs in using valid credentials (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" And the user has a product added to the shopping cart" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" User open the" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" user opens the browser at https://www.saucedemo.com/inventory-item.html?id=4" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" User open the (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" User click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" User click add" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="56410c64049bdaae113beadac30a8be04954d5a1b5f93d7bb3f2ee0238a60dcd.png" title=" user clicks on bot&Atilde;&sup3;n agregar al carrito" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cb6498711ad54a484b115ec316cd42ccadf54dfd0f21319094c8ad0089aad96.png" title=" user clicks on bot&Atilde;&sup3;n agregar al carrito (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cb6498711ad54a484b115ec316cd42ccadf54dfd0f21319094c8ad0089aad96.png" title=" User click add (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cb6498711ad54a484b115ec316cd42ccadf54dfd0f21319094c8ad0089aad96.png" title=" User click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cb6498711ad54a484b115ec316cd42ccadf54dfd0f21319094c8ad0089aad96.png" title=" And the user has a product added to the shopping cart (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="654ea2ed022c3022d713a0a98e1c7c6f2b2c424b28fd9fbdd1daec2c659e8cc7.png" title=" And the user is on the shopping cart page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="654ea2ed022c3022d713a0a98e1c7c6f2b2c424b28fd9fbdd1daec2c659e8cc7.png" title=" User open the" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="654ea2ed022c3022d713a0a98e1c7c6f2b2c424b28fd9fbdd1daec2c659e8cc7.png" title=" user opens the browser at https://www.saucedemo.com/cart.html" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="1944dc1ffef834bf9d4dce53fe6be863b52d5863c9dafe9e01d282055c4e1249.png" title=" user opens the browser at https://www.saucedemo.com/cart.html (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="1944dc1ffef834bf9d4dce53fe6be863b52d5863c9dafe9e01d282055c4e1249.png" title=" User open the (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="1944dc1ffef834bf9d4dce53fe6be863b52d5863c9dafe9e01d282055c4e1249.png" title=" And the user is on the shopping cart page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="52db7fef875aff4f15dbeb9b0aa2ed1e66230f61422dcc40195721dbe9dfdc29.png" title=" When the user proceeds to checkout" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="52db7fef875aff4f15dbeb9b0aa2ed1e66230f61422dcc40195721dbe9dfdc29.png" title=" User click check out" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="52db7fef875aff4f15dbeb9b0aa2ed1e66230f61422dcc40195721dbe9dfdc29.png" title=" User tick on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="52db7fef875aff4f15dbeb9b0aa2ed1e66230f61422dcc40195721dbe9dfdc29.png" title=" user clicks on bot&Atilde;&sup3;n checkout" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="87cf14eb594b70dc365bd6cf56876d8b1fd12b89720fff6870d3d6a3e8888355.png" title=" user clicks on bot&Atilde;&sup3;n checkout (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9bd867233dd5ef8354429a240ab3a14cf886ba5b2c9dc73281e59b58e5d5e743.png" title=" User tick on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9bd867233dd5ef8354429a240ab3a14cf886ba5b2c9dc73281e59b58e5d5e743.png" title=" User click check out (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9bd867233dd5ef8354429a240ab3a14cf886ba5b2c9dc73281e59b58e5d5e743.png" title=" When the user proceeds to checkout (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="996fd5e551ab7f274fc9217feaf1bafa10bac0aeb1b44bd089bbc73f03bcb15b.png" title=" And the checkout information given is valid" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="996fd5e551ab7f274fc9217feaf1bafa10bac0aeb1b44bd089bbc73f03bcb15b.png" title=" User type valid information" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="996fd5e551ab7f274fc9217feaf1bafa10bac0aeb1b44bd089bbc73f03bcb15b.png" title=" User type information" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="996fd5e551ab7f274fc9217feaf1bafa10bac0aeb1b44bd089bbc73f03bcb15b.png" title=" user enters 'Cristina' into first name field" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="996fd5e551ab7f274fc9217feaf1bafa10bac0aeb1b44bd089bbc73f03bcb15b.png" title=" user enters 'Vergara' into last name field" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="70dc948f086a9c1ab778442bf5b2256ea5f358cbc50146bad0657aedbe69d073.png" title=" user enters 'Vergara' into last name field (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="062ed4e028a64d1e5bd2a8a17f57a71c84dee1dc7eb485dcd4e9d847caa5c2c5.png" title=" user enters '1025' into postal code field" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4459dfbe17e649a0c644dfa3dc4d51f82b824cbab7613f29d5183e7964a50c16.png" title=" user enters '1025' into postal code field (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="80e8a435078b52299791dc6f16f708b6087c11f74400f36e7394f72e3ab095a3.png" title=" User type information (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="80e8a435078b52299791dc6f16f708b6087c11f74400f36e7394f72e3ab095a3.png" title=" User type valid information (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="80e8a435078b52299791dc6f16f708b6087c11f74400f36e7394f72e3ab095a3.png" title=" And the checkout information given is valid (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4459dfbe17e649a0c644dfa3dc4d51f82b824cbab7613f29d5183e7964a50c16.png" title=" And the user continues with the purchase revision" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4459dfbe17e649a0c644dfa3dc4d51f82b824cbab7613f29d5183e7964a50c16.png" title=" User continue process" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4459dfbe17e649a0c644dfa3dc4d51f82b824cbab7613f29d5183e7964a50c16.png" title=" User continue checkout" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4459dfbe17e649a0c644dfa3dc4d51f82b824cbab7613f29d5183e7964a50c16.png" title=" user clicks on continue button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4de37491cdaaf5f910b7f2ca2e16ea4ceb161b251fc4fbbf93cc4a0729c92d7e.png" title=" user clicks on continue button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4de37491cdaaf5f910b7f2ca2e16ea4ceb161b251fc4fbbf93cc4a0729c92d7e.png" title=" User continue checkout (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4de37491cdaaf5f910b7f2ca2e16ea4ceb161b251fc4fbbf93cc4a0729c92d7e.png" title=" User continue process (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4de37491cdaaf5f910b7f2ca2e16ea4ceb161b251fc4fbbf93cc4a0729c92d7e.png" title=" And the user continues with the purchase revision (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" Then the order should be confirmed" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" User finish the" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" User confirm order" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" user clicks on finish button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" User confirm order (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" User finish the (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" Then the order should be confirmed (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" And the purchase should be completed successfully" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7848aa80455a5760d5f74a101c59b8afbcf3234908360b5e970cc067649a10fa.png" title=" Then complete order validation: <span class='success-color'>SUCCESS</span>" width="0" />
+                </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.2.34</span>
+</div>
+</body>
+</html>

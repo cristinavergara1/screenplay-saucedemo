@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">43.789s</div>
+<div class="counter">1m26.42s</div>
 <p>duration</p>
 </div>
 </td>
@@ -58,16 +58,16 @@
 </tr>
 </table>
 </div>
-<div id="tabs">
+<div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#">Tests</a>
 </li>
 <li>
-<a href="#tab1">Standard error</a>
+<a href="#">Standard error</a>
 </li>
 </ul>
-<div id="tab0" class="tab">
+<div class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">Successful login with valid credentials</td>
-<td class="success">17.846s</td>
+<td class="success">21.142s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Unsuccessful login with invalid credentials #1</td>
-<td class="success">8.653s</td>
+<td class="success">16.368s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Unsuccessful login with invalid credentials #2</td>
-<td class="success">8.797s</td>
+<td class="success">28.211s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Unsuccessful login with invalid credentials #3</td>
-<td class="success">8.493s</td>
+<td class="success">20.702s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO  - 
@@ -112,10 +112,10 @@ Successful login with valid credentials(enter-to-the-saucedemo-official-site;suc
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --disable-notifications,--w...], extensions: []}}
-nov. 21, 2025 3:58:06 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 21, 2025 7:15:30 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov. 21, 2025 3:58:06 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 21, 2025 7:15:30 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
@@ -134,10 +134,10 @@ Unsuccessful login with invalid credentials(enter-to-the-saucedemo-official-site
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --disable-notifications,--w...], extensions: []}}
-nov. 21, 2025 3:58:22 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 21, 2025 7:15:49 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov. 21, 2025 3:58:22 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 21, 2025 7:15:49 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
@@ -148,10 +148,10 @@ Unsuccessful login with invalid credentials
 ----------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --disable-notifications,--w...], extensions: []}}
-nov. 21, 2025 3:58:31 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 21, 2025 7:16:10 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov. 21, 2025 3:58:31 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 21, 2025 7:16:10 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
@@ -162,10 +162,10 @@ Unsuccessful login with invalid credentials
 ----------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --disable-notifications,--w...], extensions: []}}
-nov. 21, 2025 3:58:39 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 21, 2025 7:16:35 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov. 21, 2025 3:58:39 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 21, 2025 7:16:35 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>
 </div>
@@ -177,7 +177,7 @@ WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 21/11/2025, 3:58:46 p. m.</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 21/11/2025, 7:17:29 p. m.</p>
 </div>
 </div>
 </body>

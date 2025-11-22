@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/2.3.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/2.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/2.3.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+
+    <!-- Swiper.js local styles and script -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startIndex = parseInt(urlParams.get("screenshot")) || 0;
+
+            new Swiper('.swiper', {
+                initialSlide: startIndex,
+                effect: 'fade',
+                speed: 200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: lightgrey;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="2053ec27942f1968eceaf38985bfd29178d79cb9ec1bca50eab1d9f60a0301b6.html">Login Saucedemo Official Site</a></span>
+                > <span class="truncate-60"><a
+                    href="f4b75135a8c72dc16dbdf57a1037eaf3d50be09241c56d65c6703b1df2bf3df8.html">Unsuccessful login with invalid credentials </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 21-11-2025 19:15</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Enter To The Saucedemo Official Site </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a user<br />
+I want to enter the SauceDemo official site<br />
+To be able to use the platform
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Unsuccessful login with invalid credentials
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given the user opens the SauceDemo login page<br>When the user logs in with invalid username "&lt;username&gt;" and password "&lt;password&gt;"<br>Then the user should see an error message indicating invalid credentials</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" 1: Unsuccessful login with invalid credentials ({username=locked_out_user, password=secret_sauce})" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user opens the browser at https://www.saucedemo.com" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" When the user logs in with invalid username &quot;locked_out_user&quot; and password &quot;secret_sauce&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User invalid login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User login unsuccessful" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user enters 'locked_out_user' into INPUT USER" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b8015282c4457336c18a7d0457e1ea2a65e22b07cba384f78ec1889dcfd7a073.png" title=" user enters 'locked_out_user' into INPUT USER (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f359bb086fcb438dcaba3f7b809866f8a516300c0d83ef2acf7dab6e48b26485.png" title=" user enters 'secret_sauce' into INPUT PASSWORD" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e8c7c0387f7187a9e7ba5b025f1b1e06c754c87f1d7439262c9f493723e3c798.png" title=" user enters 'secret_sauce' into INPUT PASSWORD (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e8c7c0387f7187a9e7ba5b025f1b1e06c754c87f1d7439262c9f493723e3c798.png" title=" user clicks on CLICK LOGIN" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" user clicks on CLICK LOGIN (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" User login unsuccessful (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" User invalid login (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" When the user logs in with invalid username &quot;locked_out_user&quot; and password &quot;secret_sauce&quot; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" Then the user should see an error message indicating invalid credentials" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" Then login error message should be a string containing 'Epic sadface'" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7ac6ff632d3ba700902ef4c8cf75f090815db98bebc06155d937d59a0e441b97.png" title=" 1: Unsuccessful login with invalid credentials ({username=locked_out_user, password=secret_sauce}) (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" 2: Unsuccessful login with invalid credentials ({username=cristina_user, password=secret_sauce})" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user opens the browser at https://www.saucedemo.com" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" When the user logs in with invalid username &quot;cristina_user&quot; and password &quot;secret_sauce&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User invalid login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User login unsuccessful" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user enters 'cristina_user' into INPUT USER" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="da5c15df0de7c3e78a0a70b859fe0f10da8450c8a71cc3f2f01f948c2809845d.png" title=" user enters 'cristina_user' into INPUT USER (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="da5c15df0de7c3e78a0a70b859fe0f10da8450c8a71cc3f2f01f948c2809845d.png" title=" user enters 'secret_sauce' into INPUT PASSWORD" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="bc424c3097495d02259f186dd7a8159483986da10c9c69921a577a9d69affd31.png" title=" user enters 'secret_sauce' into INPUT PASSWORD (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5993fbad48b9ec52b52180236305a648130af762082ee655ecca80887e02b970.png" title=" user clicks on CLICK LOGIN" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" user clicks on CLICK LOGIN (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" User login unsuccessful (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" User invalid login (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" When the user logs in with invalid username &quot;cristina_user&quot; and password &quot;secret_sauce&quot; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" Then the user should see an error message indicating invalid credentials" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" Then login error message should be a string containing 'Epic sadface'" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c11eacb7e9e0e6796ed968615e84fa6c82118524d5fa11c7999b68c4358ef15d.png" title=" 2: Unsuccessful login with invalid credentials ({username=cristina_user, password=secret_sauce}) (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" 3: Unsuccessful login with invalid credentials ({username=standard_user, password=12345})" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user opens the browser at https://www.saucedemo.com" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" Given the user opens the SauceDemo login page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" When the user logs in with invalid username &quot;standard_user&quot; and password &quot;12345&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User invalid login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" User login unsuccessful" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f19b6d784e52834703ecfcd727211cf19744400f88f5b9e2c5cf5cb3c1fdb3e.png" title=" user enters 'standard_user' into INPUT USER" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e2a62b6ca3314e4cf236d18214c27a164b61d7bfdfaebd97731393c00d35cfb.png" title=" user enters 'standard_user' into INPUT USER (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e2a62b6ca3314e4cf236d18214c27a164b61d7bfdfaebd97731393c00d35cfb.png" title=" user enters '12345' into INPUT PASSWORD" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="fd75a857ce33fef6472da459a8e21649beb47c5b7d51d0ac39728d5be4a14893.png" title=" user enters '12345' into INPUT PASSWORD (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="db7dda6bc50c3e4fec1e21f542a9d1731306fcdd476ced166a6464db067e5b0f.png" title=" user clicks on CLICK LOGIN" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" user clicks on CLICK LOGIN (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" User login unsuccessful (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" User invalid login (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" When the user logs in with invalid username &quot;standard_user&quot; and password &quot;12345&quot; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" Then the user should see an error message indicating invalid credentials" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" Then login error message should be a string containing 'Epic sadface'" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="4e1151abc886d80b17ee0c583f5d4ce7a22507b0379f7574c50eb73444ce7c30.png" title=" 3: Unsuccessful login with invalid credentials ({username=standard_user, password=12345}) (completed): <span class='success-color'>SUCCESS</span>" width="0" />
+                </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.2.34</span>
+</div>
+</body>
+</html>
