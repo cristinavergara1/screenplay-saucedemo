@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 
-public class StepDefinition {
+public class LoginStepDefinition {
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver theDriver;
 
@@ -43,7 +43,13 @@ public class StepDefinition {
                 LoginInTheOfficialSite.theUser()
         );
     }
-
+    // Validación exitosa
+    @Then("the user should see the products inventory")
+    public void theUserShouldSeeTheProductsInventory() {
+        OnStage.theActorInTheSpotlight()
+                .should(seeThat(LoginValidation.isSuccessful(), equalTo(true)));
+    }
+    //Inválido
     @When("the user logs in with invalid username {string} and password {string}")
     public void theUserLogsInWithInvalidUsernameAndPassword(String username, String password) {
         OnStage.theActorInTheSpotlight().attemptsTo(
@@ -51,12 +57,7 @@ public class StepDefinition {
         );
     }
 
-    // Validación exitosa
-    @Then("the user should see the products inventory")
-    public void theUserShouldSeeTheProductsInventory() {
-        OnStage.theActorInTheSpotlight()
-                .should(seeThat(LoginValidation.isSuccessful(), equalTo(true)));
-    }
+
 
     // Validación de error
     @Then("the user should see an error message indicating invalid credentials")

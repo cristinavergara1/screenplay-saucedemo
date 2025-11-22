@@ -5,7 +5,7 @@ import com.saucedemo.certificacion.compra.tasks.OpenThe;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.actors.OnStage;
 
-public class LoginSteps {
+public class CommonLoginSteps {
     @Given("the user logs in using valid credentials")
     public void theUserLogsIn() {
         OnStage.theActorInTheSpotlight().attemptsTo(

@@ -16,7 +16,8 @@ public class CommonProductSteps {
 
     @Given("the user is on the shopping cart page")
     public void theUserIsOnShoppingCartPage() {
-        OnStage.theActorCalled("user").attemptsTo(
+        OnStage.theActorInTheSpotlight().attemptsTo(
                 OpenThe.url("https://www.saucedemo.com/cart.html")
         );
-}}
+    }
+}

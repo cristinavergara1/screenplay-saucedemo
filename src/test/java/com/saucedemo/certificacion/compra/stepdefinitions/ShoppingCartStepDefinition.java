@@ -33,13 +33,13 @@ public class ShoppingCartStepDefinition {
 
     @Given("the user is on the product page")
     public void theUserIsOnTheProductPage() {
-            OnStage.theActorCalled("user").attemptsTo(
-                    OpenThe.url("https://www.saucedemo.com/inventory-item.html?id=4ya")
-            );
-        }
+        OnStage.theActorInTheSpotlight().attemptsTo(
+            OpenThe.url("https://www.saucedemo.com/inventory-item.html?id=4ya")
+        );
+    }
     @When("the user adds {string} to the shopping cart")
     public void theUserAddsToTheShoppingCart(String string) {
-         OnStage.theActorCalled("user").attemptsTo(ClickOn.ShoppingButton());
+        OnStage.theActorInTheSpotlight().attemptsTo(ClickOn.ShoppingButton());
     }
     @Then("the shopping cart should display {int} item")
     public void theUserSeeProductInTheShoppingCart(Integer int1) {

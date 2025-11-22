@@ -20,7 +20,7 @@ public class DeleteProductValidation implements Question<Integer> {
             return Integer.parseInt(text);
         }
 
-        // Badge NO existe → carrito vacío
+        // Badge NO existe,el carrito  está vacío
         return 0;
     }
 

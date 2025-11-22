@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Managed;
 
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
@@ -25,13 +26,12 @@ public class DeleteProductStepDefinition {
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());
-        //OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
+        OnStage.theActorCalled("user").can(BrowseTheWeb.with(theDriver));
     }
 
-
-        @Given("the user is on shopping cart page")
+    @Given("the user is on shopping cart page")
     public void theUserIsOnShoppingCartPage() {
-        OnStage.theActorCalled("user").attemptsTo(
+        OnStage.theActorInTheSpotlight().attemptsTo(
                 OpenThe.url("https://www.saucedemo.com/cart.html")
         );
     }
@@ -39,7 +39,7 @@ public class DeleteProductStepDefinition {
     @When("the user deletes {string} from the shopping cart")
     public void theUserDeletesFromTheShoppingCart(String string) {
         WaitTime.putWaitTimeOf(3000);
-        OnStage.theActorCalled("user").attemptsTo(Remove.FromShoppingCart());
+        OnStage.theActorInTheSpotlight().attemptsTo(Remove.FromShoppingCart());
     }
 
     @Then("the shopping cart should be empty")
@@ -47,8 +47,3 @@ public class DeleteProductStepDefinition {
         OnStage.theActorInTheSpotlight().should(seeThat(DeleteProductValidation.product(), equalTo(0)));
     }
 }
-
-
-
-
-

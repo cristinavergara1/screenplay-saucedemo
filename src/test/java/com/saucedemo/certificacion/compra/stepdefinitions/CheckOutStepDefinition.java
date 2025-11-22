@@ -33,22 +33,21 @@ public class CheckOutStepDefinition {
     @When("the user proceeds to checkout")
     public void theUserProceedsToCheckout() {
         WaitTime.putWaitTimeOf(4000);
-       OnStage.theActorInTheSpotlight().attemptsTo(ClickCheckOut.process());
-
+        OnStage.theActorInTheSpotlight().attemptsTo(ClickCheckOut.process());
     }
     @And("the checkout information given is valid")
     public void theCheckoutInformationGivenIsValid() {
         WaitTime.putWaitTimeOf(3000);
-        OnStage.theActorCalled("user").attemptsTo(TypeValidInformation.details());
+        OnStage.theActorInTheSpotlight().attemptsTo(TypeValidInformation.details());
     }
     @And("the user continues with the purchase revision")
     public void theUserContinuesWithThePurchaseRevision() {
         WaitTime.putWaitTimeOf(3000);
-        OnStage.theActorCalled("user").attemptsTo(ContinueProcess.ofCheckout());
+        OnStage.theActorInTheSpotlight().attemptsTo(ContinueProcess.ofCheckout());
     }
     @Then("the order should be confirmed")
     public void theOrderShouldBeConfirmed() {
-       OnStage.theActorInTheSpotlight().attemptsTo(FinishThe.theOrder());
+        OnStage.theActorInTheSpotlight().attemptsTo(FinishThe.theOrder());
     }
     @And("the purchase should be completed successfully")
     public void thePurchaseShouldBeCompletedSuccessfully() {
@@ -57,5 +56,3 @@ public class CheckOutStepDefinition {
         );
     }
 }
-
-
